@@ -9,9 +9,8 @@ df = pd.read_excel(
     io='supermarkt_sales.xlsx',
     engine='openpyxl',
     sheet_name='Sales',
-    skiprows=313,
+    skiprows=3,
     usecols='B:R',
-    nrows=200,
+    nrows=1000,
 )
-
-st.dataframe(df)
+st.dataframe(df.iloc[219:420])
