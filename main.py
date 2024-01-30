@@ -16,4 +16,14 @@ if uploaded_file:
     )
     output_columns = ["Sales", "Profit"]
     df_grouped = df.groupby(by=[groupby_column], as_index=False)[output_columns].sum()
-    st.dataframe(df_grouped)
+
+    fig = px.bar(
+        df_grouped,
+        x=groupby_column,
+        y = "Sales",
+        color="Profit",
+        color_continuous_scale=["red", "yellow", "green"],
+        template="plotly_white",
+        title=f"<b>Продажи и прибыль согласно {groupby_column}</b>"
+    )
+    st.plotly_chart(fig)
