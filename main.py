@@ -22,7 +22,7 @@ if uploaded_file:
         x=groupby_column,
         y = "Sales",
         color="Profit",
-        color_continuous_scale=["red", "yellow", "green"],
+        color_continuous_scale=["brown", "pink", "orange"],
         template="plotly_white",
         title=f"<b>Продажи и прибыль согласно {groupby_column}</b>"
     )
